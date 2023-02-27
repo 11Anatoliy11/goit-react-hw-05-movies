@@ -5,8 +5,8 @@
   "homepage": "https://11Anatoliy11.github.io/goit-react-hw-05-movies/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "axios": "^0.27.2",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.5",
