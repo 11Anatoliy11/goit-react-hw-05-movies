@@ -7,7 +7,7 @@ export default function MovieCastView({ movieId }) {
 
   useEffect(() => {
     const getCast = async () => {
-      const { cast } = await getMovieCast(movieId);
+      const cast = await getMovieCast(movieId);
       setCast(cast);
     };
 
@@ -23,7 +23,7 @@ export default function MovieCastView({ movieId }) {
               src={
                 profile_path
                   ? IMAGE_URL + profile_path
-                  : `https://bitsofco.de/content/images/2018/12/broken-1.png`
+                  : `https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930`
               }
               alt={name}
               width="100"

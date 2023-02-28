@@ -55,7 +55,7 @@ export default function MovieDetailsPage() {
                 src={
                   movie.poster_path
                     ? IMAGE_URL + movie.poster_path
-                    : `https://bitsofco.de/content/images/2018/12/broken-1.png`
+                    : `https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930`
                 }
                 alt={movie.title}
                 widht=""
@@ -65,7 +65,7 @@ export default function MovieDetailsPage() {
 
             <div>
               <h2>{movie.title}</h2>
-              <p>User Score: {`${movie.vote_average * 10}`}%</p>
+              <p>User Score: {`${Math.round(movie.vote_average * 10)}`}%</p>
               <h3>Overview</h3>
               <p>{`${movie.overview}`}</p>
               <h3>Genres</h3>

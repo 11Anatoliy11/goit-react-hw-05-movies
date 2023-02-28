@@ -2,7 +2,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
-const KEY = '1c946dce2b60cb636de6f72a25cb04da';
+const KEY = '9bca1f873478832455af25e449c4a86d';
 export const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 
 export const searchMovies = async stringToSearch => {
@@ -24,13 +24,14 @@ export const fetchTrendingMovies = async () => {
 };
 
 export const getMovieCast = async movieId => {
-  const queryString = `movie/${movieId}/credits$?api_key={apiKey}&language=en-US`;
-  const { data } = await axios.get(queryString);
-  return data;
+  const queryString = `movie/${movieId}/credits?api_key=${KEY}&language=en-US`;
+  const data = await axios.get(queryString);
+  const result = data?.data?.cast?.filter((x, i, a) => a.findIndex(it => it.id === x.id) === i)
+  return result;
 };
 
 export const getReviews = async movieId => {
-  const queryString = `movie/${movieId}/reviews$?api_key={apiKey}&language=en-US`;
+  const queryString = `movie/${movieId}/reviews?api_key=${KEY}&language=en-US`;
   const { data } = await axios.get(queryString);
   return data;
 };
